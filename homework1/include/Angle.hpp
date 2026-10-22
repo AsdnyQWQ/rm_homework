@@ -6,7 +6,10 @@ class Angle
         int initial_v;//定义初速度
         int distance;//定义距离
         double max_distance;//定义最远攻击距离
+        int height;//定义高度
+
     public:
-        double solver(int v, int d);
+        double solver( int d);
+        double solver( int d, int h);
         Angle();
 };
