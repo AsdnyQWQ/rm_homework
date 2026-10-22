@@ -23,5 +23,5 @@ double Angle::solver(int d)
 
 double Angle::solver(int d,int h)
 {
-    
+    //请先忽略
 }
