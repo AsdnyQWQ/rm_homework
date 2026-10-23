@@ -1,7 +1,8 @@
 #include"Angle.hpp"
+#include<iostream>
 #include<cmath>
 
-Angle::Angle():gravity(9.8),angle(0),initial_v(10.0),distance(5.0),max_distance(0),height(1.0)
+Angle::Angle():gravity(9.8),angle(0),initial_v(10.0),distance(5.0),max_distance(0),height(1.0),time(2.0)
 {
     //构造函数  
 };
@@ -16,7 +17,6 @@ double Angle::solver(double d)
         angle = std::asin((distance*gravity)/(initial_v*initial_v))/2.0;
         return angle;
     }//未超过最大攻击距离时计算角度，结果为弧度制
-    else
         return -1.0;//超过距离，返回-1表示无法命中
 }
 
@@ -33,6 +33,8 @@ double Angle::solver(double d,double h)
      if(ch1 <= ch2)
     {
         angle = (asin(ch1/ch2)+ch3)/2;
+        time = distance/(initial_v * std::sin(angle));//计算时间
+        std::cout << "飞行时间为：" << time << std::endl;
         return angle;
     }
     else

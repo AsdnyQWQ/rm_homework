@@ -7,6 +7,7 @@ class Angle
         double distance;//定义距离
         double max_distance;//定义最远攻击距离
         double height;//定义高度
+        double time;//定义时间
 
     public:
         double solver( double d);
