@@ -9,7 +9,7 @@ class Angle
         double height;//定义高度
 
     public:
-        double solver( int d);
-        double solver( int d, int h);
+        double solver( double d);
+        double solver( double d, double h);
         Angle();
 };

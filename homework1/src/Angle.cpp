@@ -1,5 +1,4 @@
 #include"Angle.hpp"
-#include<iostream>
 #include<cmath>
 
 Angle::Angle():gravity(9.8),angle(0),initial_v(10.0),distance(5.0),max_distance(0),height(1.0)
@@ -7,7 +6,7 @@ Angle::Angle():gravity(9.8),angle(0),initial_v(10.0),distance(5.0),max_distance(
     //构造函数  
 };
 
-double Angle::solver(int d)
+double Angle::solver(double d)
 {
     distance = d;
     
@@ -21,7 +20,7 @@ double Angle::solver(int d)
         return -1.0;//超过距离，返回-1表示无法命中
 }
 
-double Angle::solver(int d,int h)
+double Angle::solver(double d,double h)
 {
     distance = d;
     height = h;
