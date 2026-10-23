@@ -1,12 +1,12 @@
 class Angle
 {
     private:
-        const float gravity;//定义重力加速度常量
+        const double gravity;//定义重力加速度常量
         double angle;  //定义发射角度
-        int initial_v;//定义初速度
-        int distance;//定义距离
+        double initial_v;//定义初速度
+        double distance;//定义距离
         double max_distance;//定义最远攻击距离
-        int height;//定义高度
+        double height;//定义高度
 
     public:
         double solver( int d);

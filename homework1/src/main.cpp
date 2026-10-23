@@ -4,15 +4,23 @@
 int main()
 {
     //定义距离模拟实际发射环境
-    int distance = 4;
+    double distance = 4.0;
+    double height = 2.0;
 
+    double angle;//接受返回值
     double angle_radian;//弧度制表角度
     double angle_degree;//角度制表角度
     double pi = 3.141592653589;//定义圆周率
    
 
     Angle shooter1;
-    double angle = shooter1.solver(distance);
+    //判断h是否为0以判断调用哪个函数
+    if(height == 0)
+        angle = shooter1.solver(distance);
+    else
+        angle = shooter1.solver(distance,height);
+
+
     if(angle == -1.0)
         std::cout << "无法命中目标" << std::endl;//判断能否命中
     else
