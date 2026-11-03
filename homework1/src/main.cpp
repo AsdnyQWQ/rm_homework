@@ -10,7 +10,7 @@ int main()
     double angle;//接受返回值
     double angle_radian;//弧度制表角度
     double angle_degree;//角度制表角度
-    double pi = 3.141592653589;//定义圆周率
+    const double pi = 3.141592653589;//定义圆周率
    
 
     Angle shooter1;

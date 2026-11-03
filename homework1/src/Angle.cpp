@@ -17,6 +17,7 @@ double Angle::solver(double d)
         angle = std::asin((distance*gravity)/(initial_v*initial_v))/2.0;
         return angle;
     }//未超过最大攻击距离时计算角度，结果为弧度制
+    else
         return -1.0;//超过距离，返回-1表示无法命中
 }
 
