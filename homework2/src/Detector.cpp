@@ -7,6 +7,7 @@ void Detector::detect(std::string path)
     cv::Mat img,imgBlur,imgHSV,mask;
     cv::VideoCapture cap(path);
     std::vector <HSVrange> Color; 
+
     //创建滑动条
     cv::namedWindow("Trackbars",cv::WINDOW_NORMAL);
     cv::resizeWindow("Trackbars",640,100);
@@ -17,8 +18,6 @@ void Detector::detect(std::string path)
     cv::createTrackbar("hmax", "Trackbars", &hmax, 179);
     cv::createTrackbar("smax", "Trackbars", &smax, 255);
     cv::createTrackbar("vmax", "Trackbars", &vmax, 255);
-
-
 
 
     Color.insert 
