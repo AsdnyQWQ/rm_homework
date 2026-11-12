@@ -48,13 +48,8 @@ void Detector::detect(std::string path)
         {
             //二值化识别特定颜色
             cv::inRange(imgHSV,Color[i].lower,Color[i].upper,mask);
-            //读取二值化白色部分面积
-            int whit_range = countNonZero(mask);
-
-            //if(whit_range > 20000)
-            drawResult(mask,img,Color[i].color);
             
-            
+            drawResult(mask,img,Color[i].color);            
         }
 
         cv::imshow("Image_raw",imgRaw);
