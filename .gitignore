@@ -30,3 +30,6 @@ cmake_install.cmake
 CMakeCache.txt
 CMakeFiles/
 Makefile
+	*.json
+	*.mp4
+	user
