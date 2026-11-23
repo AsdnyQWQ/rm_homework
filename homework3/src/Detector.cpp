@@ -1,25 +1,11 @@
 #include "Deetector.hpp"
 #include "pnp_solver.hpp"
 
-//detec函数调用摄像头，同时具备识别apriltag和拍照两个功能
+//detec函数调用摄像头识别apriltag
 void Detector::detect()
 {
     cv::VideoCapture cap(0);
     cv::Mat img;
-    bool paused = false;
-
-
-
-    // 设置图片保存文件夹
-    std::string savePath = "shootphotos";
-    int imageCount = 1;
-
-    // 如果文件夹不存在，就自动创建
-    if (!fs::exists(savePath))
-    {
-        fs::create_directories(savePath);
-    }
-
 
 
     //选择Aprilag的字典家族36h11
@@ -28,13 +14,13 @@ void Detector::detect()
 
 
     std::vector<std::vector<cv::Point2f>> corners;//装tag的角点坐标
-    std::vector<int> ids;//储存识别结cv::Mat img_result = img.clone(); //克隆一个图像便于对比果
+    std::vector<int> ids;
+    cv::Mat img_result = img.clone(); 
 
 
 
     while(true)
     {
-        if(!paused)
         cap >> img;
         cv::Mat imgRaw = img.clone();
 
@@ -51,32 +37,9 @@ void Detector::detect()
 
         cv::imshow("Image_raw",imgRaw);
 
-        int key = cv::waitKey(33);
-
-        //空格暂停
-        if(key == 32)
-            paused = !paused;
+        cv::waitKey(33);
 
         
-        //按s键拍照，搭配暂停使用
-        if(key == 115 || key == 83)
-        {
-            // 拼接文件名
-            std::string filename = savePath + "/" +std::to_string(imageCount) + ".jpg";
-
-            // 保存图片
-            if (cv::imwrite(filename, img))
-            {
-                std::cout << "保存成功：" << filename << std::endl;
-                imageCount++;
-            }
-            
-            
-        }
-
-        //esc退出
-        if(key == 27)
-            break;
     }
    
 }

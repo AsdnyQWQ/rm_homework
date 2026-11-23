@@ -6,7 +6,7 @@ int main()
 {
     Detector detector;
     detector.detect();
-    calibrate_camera();
+
 
     return 0;
 }

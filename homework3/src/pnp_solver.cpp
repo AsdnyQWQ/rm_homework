@@ -105,7 +105,6 @@ void pnp_solver(cv::Mat img,std::vector<std::vector<cv::Point2f>> imagePoints)
     std::vector<std::vector<cv::Point>> intPixelFaces(6);
 
 
-    
     //将所有点的数据类型从float转换为int
     for (int i = 0; i < pixel_faces.size(); i++)
     {
