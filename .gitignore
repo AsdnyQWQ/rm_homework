@@ -77,3 +77,6 @@ Thumbs.db
 .ros/
 
 *.json
+
+# Linux dconf 配置数据库
+**/tmp/aha/dconf/user
