@@ -106,7 +106,7 @@ void pnp_solver(cv::Mat img,std::vector<std::vector<cv::Point2f>> imagePoints,cv
         }
     }
 
-    cv::fillPoly(img,pixel_faces,cv::Scalar(0,255,0));
+    cv::fillPoly(img,intPixelFaces,cv::Scalar(0,255,0));
 
     
 }

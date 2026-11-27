@@ -7,7 +7,7 @@ AprilTagNode::AprilTagNode() : Node("apriltag_pnpsolver_node")
 {
     //创建订阅者，调用回调函数
     image_subscriber = this->create_subscription<sensor_msgs::msg::Image>
-    (  "/camera/image_raw",10, 
+    (  "/camera/image",10, 
         std::bind(&AprilTagNode::imageCallback,this,std::placeholders::_1)
     );
 
